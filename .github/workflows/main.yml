@@ -33,19 +33,19 @@ jobs:
           pwd
           ls -l
           
-#       - name: Push to Releases
-#         uses: ncipollo/release-action@v1
-#         with:
-#           artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
-#           tag: v1.0.${{ github.run_number }}
-#           token: ${{ secrets.ios_token }}
-
-      - name: App Center
-        uses: wzieba/AppCenter-Github-Action@v1.3.3
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
         with:
-         appName: kumarvineet011/flutter_ios
-         token: ${{secrets.IOS_TOKEN}}
- #        group: demoapp
-         file: /Users/runner/work/ios_flutter_sm_github_action/ios_flutter_sm_github_action/build/ios/iphoneos/app.ipa
-         notifyTesters: true
-         debug: false 
+          artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
+          tag: v1.0.${{ github.run_number }}
+          token: ${{ secrets.IOS_TOKEN }}
+
+#       - name: App Center
+#         uses: wzieba/AppCenter-Github-Action@v1.3.3
+#         with:
+#          appName: kumarvineet011/flutter_ios
+#          token: ${{secrets.IOS_TOKEN}}
+#  #        group: demoapp
+#          file: /Users/runner/work/ios_flutter_sm_github_action/ios_flutter_sm_github_action/build/ios/iphoneos/app.ipa
+#          notifyTesters: true
+#          debug: false 
