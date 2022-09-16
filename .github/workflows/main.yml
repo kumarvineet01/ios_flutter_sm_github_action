@@ -44,7 +44,7 @@ jobs:
         uses: wzieba/AppCenter-Github-Action@v1.3.3
         with:
          appName: kumarvineet011/flutter_ios
-         token: ${{secrets.ios_token}}
+         token: ${{secrets.IOS_TOKEN}}
  #        group: demoapp
          file: /Users/runner/work/ios_flutter_sm_github_action/ios_flutter_sm_github_action/build/ios/iphoneos/app.ipa
          notifyTesters: true
