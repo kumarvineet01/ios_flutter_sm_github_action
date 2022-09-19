@@ -60,10 +60,11 @@ jobs:
            token: ${{ secrets.APPCENTER_TOKEN }}
            path: build/ios/iphoneos/app.ip 
            app: demoapp_ios/IOS
-          
-          
-          
-          
+           mandatory: true
+           silent: false
+           group: 'tester'
+
+
           
           
           
