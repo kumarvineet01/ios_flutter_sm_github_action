@@ -58,7 +58,7 @@ jobs:
         uses: akiojin/appcenter-distribute-github-action@v1
         with:
            token: ${{ secrets.APPCENTER_TOKEN }}
-           path: build/ios/iphoneos/app.ip 
+           path: /Users/runner/work/ios_flutter_sm_github_action/ios_flutter_sm_github_action/build/ios/iphoneos/app.ipa 
            app: demoapp_ios/IOS
            mandatory: true
            silent: false
