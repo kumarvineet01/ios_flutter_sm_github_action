@@ -33,12 +33,26 @@ jobs:
           pwd
           ls -l
           
-      - name: Push to Releases
-        uses: ncipollo/release-action@v1
+#       - name: Push to Releases
+#         uses: ncipollo/release-action@v1
+#         with:
+# #          artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
+#           artifacts: build/ios/iphoneos/app.ipa
+#           tag: v1.0.${{ github.run_number }}
+#           token: ${{ secrets.IOS_TOKEN }}
+          
+      - name: Upload ipa to App Center
+        uses: wzieba/AppCenter-Github-Action@v1.3.1
         with:
-          artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
-          tag: v1.0.${{ github.run_number }}
-          token: ${{ secrets.IOS_TOKEN }}
+         appName: demoapp_ios/IOS
+         token: ${{ secrets.APPCENTER_TOKEN }}
+         group: tester
+         file: build/ios/iphoneos/app.ip      
+        
+        
+        
+          
+          
 
 #       - name: App Center
 #         uses: wzieba/AppCenter-Github-Action@v1.3.3
