@@ -42,7 +42,8 @@ jobs:
 #           token: ${{ secrets.IOS_TOKEN }}
           
       - name: Upload ipa to App Center
-        uses: wzieba/AppCenter-Github-Action@v1.3.1
+ #       uses: wzieba/AppCenter-Github-Action@v1.3.1
+        uses: grndvl1/appcenter-distribute-action@master
         with:
          appName: demoapp_ios/IOS
          token: ${{ secrets.APPCENTER_TOKEN }}
