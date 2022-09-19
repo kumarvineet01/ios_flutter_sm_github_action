@@ -41,17 +41,37 @@ jobs:
 #           tag: v1.0.${{ github.run_number }}
 #           token: ${{ secrets.IOS_TOKEN }}
           
-      - name: Upload ipa to App Center
- #       uses: wzieba/AppCenter-Github-Action@v1.3.1
-        uses: grndvl1/appcenter-distribute-action@master
+          
+          
+#       - name: Upload ipa to App Center
+#  #       uses: wzieba/AppCenter-Github-Action@v1.3.1
+#         uses: grndvl1/appcenter-distribute-action@master
+#         with:
+#          appName: demoapp_ios/IOS
+#          token: ${{ secrets.APPCENTER_TOKEN }}
+#          group: tester
+#          file: build/ios/iphoneos/app.ip      
+        
+        
+        
+      - name: Distribute ipa to App Center
+        uses: akiojin/appcenter-distribute-github-action@v1
         with:
-         appName: demoapp_ios/IOS
-         token: ${{ secrets.APPCENTER_TOKEN }}
-         group: tester
-         file: build/ios/iphoneos/app.ip      
-        
-        
-        
+           token: ${{ secrets.APPCENTER_TOKEN }}
+           path: build/ios/iphoneos/app.ip 
+           app: demoapp_ios/IOS
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
           
 
