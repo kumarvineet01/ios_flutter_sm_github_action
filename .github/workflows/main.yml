@@ -34,13 +34,12 @@ jobs:
           pwd
           ls -l
           
-      - name: Push to Releases
-        uses: ncipollo/release-action@v1
-        with:
-         artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
-#          artifacts: build/ios/iphoneos/app.ipa
-         tag: v1.0.${{ github.run_number }}
-         token: ${{ secrets.APPCENTER_TOKEN }}
+#       - name: Push to Releases
+#         uses: ncipollo/release-action@v1
+#         with:
+#          artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
+#          tag: v1.0.${{ github.run_number }}
+#          token: ${{ secrets.APPCENTER_TOKEN }}
           
           
                 
@@ -57,7 +56,19 @@ jobs:
 #            group: 'tester'
 #            mandatory: true
 #            silent: false
-           
+
+
+      - name: Distribute ipa to App Center
+        uses: akiojin/appcenter-distribute-github-action@v1
+        with:
+          token: ${{ secrets.APPCENTER_ACCESS_TOKEN }}
+          #build-number: ${{ github.run_number }}
+          path: /Users/runner/work/ios_flutter_sm_github_action/ios_flutter_sm_github_action/build/ios/iphoneos/app.ipa
+          app: kumarvineet011/IOS
+          mandatory: true
+          silent: false
+          group: 'Tests'
+          release_notes: "Deployment successed"           
 
 
           
