@@ -20,9 +20,10 @@ jobs:
         with:
           flutter-version: '2.2.0'
       - run: |
+          echo $(secrets.APPCENTER_TOKEN)
+          echo ${secrets.APPCENTER_TOKEN}
           echo $(APP_CENTER_TOKEN)
-          echo ${APPCENTER_TOKEN }
- 
+          echo $(Environment.APP_CENTER_TOKEN)
           
 #       - run: flutter pub get
 #       - run: flutter test
