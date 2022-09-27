@@ -67,7 +67,7 @@ jobs:
           token: ${{secrets.APP_CENTER_TOKEN}}
           #build-number: ${{ github.run_number }}
           path: build/ios/iphoneos/app.ipa
-          app: kumarvineet011/IOS
+          appName: kumarvineet011/IOS
           mandatory: true
           silent: false
           group: 'Tests'
