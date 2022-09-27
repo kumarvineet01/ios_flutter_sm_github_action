@@ -19,7 +19,16 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: '2.2.0'
-      - run: echo $FLUTTER
+      - run: |
+          echo $FLUTTER
+          "echo $FLUTTER"
+          echo "$FLUTTER"
+          echo $APPCENTER_TOKEN
+          echo "$APPCENTER_TOKEN"
+          echo $APPCENTER_TOKEN
+          echo $secrets.APPCENTER_TOKEN
+          echo "$secrets.APPCENTER_TOKEN"
+          
 #       - run: flutter pub get
 #       - run: flutter test
 #       - run: flutter build apk --debug --split-per-abi
