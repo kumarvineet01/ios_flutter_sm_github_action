@@ -19,26 +19,20 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: '2.2.0'
+      - run: flutter pub get
+      - run: flutter test
+      - run: flutter build apk --debug --split-per-abi
+      - run: pwd && ls -l
       - run: |
-          echo $(secrets.APPCENTER_TOKEN)
-          echo ${secrets.APPCENTER_TOKEN}
-          echo $(APP_CENTER_TOKEN)
-          echo $(Environment.APP_CENTER_TOKEN)
-          
-#       - run: flutter pub get
-#       - run: flutter test
-#       - run: flutter build apk --debug --split-per-abi
-#       - run: pwd && ls -l
-#       - run: |
-#           flutter build ios --no-codesign
-#           cd build/ios/iphoneos
-#           mkdir Payload
-#           cd Payload
-#           ln -s ../Runner.app
-#           cd ..
-#           zip -r app.ipa Payload
-#           pwd
-#           ls -l
+          flutter build ios --no-codesign
+          cd build/ios/iphoneos
+          mkdir Payload
+          cd Payload
+          ln -s ../Runner.app
+          cd ..
+          zip -r app.ipa Payload
+          pwd
+          ls -l
           
           
 #       - name: Push to Releases
@@ -68,7 +62,7 @@ jobs:
       - name: Distribute ipa to App Center
         uses: akiojin/appcenter-distribute-github-action@v1
         with:
-          APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_TOKEN }}
+          token: ${{secrets.APP_CENTER_TOKEN}}
           #build-number: ${{ github.run_number }}
           path: /Users/runner/work/ios_flutter_sm_github_action/ios_flutter_sm_github_action/build/ios/iphoneos/app.ipa
           app: kumarvineet011/IOS
