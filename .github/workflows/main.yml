@@ -64,7 +64,7 @@ jobs:
       - name: Distribute ipa to App Center
         uses: akiojin/appcenter-distribute-github-action@v1
         with:
-          appName: kumarvineet011/IOS
+          app: kumarvineet011/IOS
           token: ${{secrets.APP_CENTER_TOKEN}}
           group: Tests
           build-number: ${{ github.run_number }}
