@@ -71,7 +71,7 @@ jobs:
           token: ${{secrets.APP_CENTER_TOKEN}}
           group: Tests
           build-number: ${{ github.run_number }}
-          path: /Users/runner/work/ios_flutter_sm_github_action/ios_flutter_sm_github_action/app.ipa"
+          path: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
           mandatory: true
           silent: false
           release_notes: "Deployment successed"           
