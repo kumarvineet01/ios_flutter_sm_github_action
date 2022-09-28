@@ -35,6 +35,9 @@ jobs:
           ls -l
           
       - name: Check_file & Path
+        run: pwd && ls -l  
+          
+      - name: Check_file & Path
         run: ls -l build/ios/iphoneos && pwd
           
 #       - name: Push to Releases
@@ -68,7 +71,7 @@ jobs:
           token: ${{secrets.APP_CENTER_TOKEN}}
           group: Tests
           build-number: ${{ github.run_number }}
-          artifacts: build/ios/iphoneos/app.ipa
+          path: /Users/runner/work/ios_flutter_sm_github_action/ios_flutter_sm_github_action/app.ipa"
           mandatory: true
           silent: false
           release_notes: "Deployment successed"           
