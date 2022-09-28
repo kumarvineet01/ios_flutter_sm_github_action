@@ -68,7 +68,7 @@ jobs:
           token: ${{secrets.APP_CENTER_TOKEN}}
           group: Tests
           build-number: ${{ github.run_number }}
-          path: build/ios/iphoneos/app.ipa
+          artifacts: build/ios/iphoneos/app.ipa
           mandatory: true
           silent: false
           release_notes: "Deployment successed"           
