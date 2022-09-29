@@ -74,7 +74,7 @@ jobs:
           path: build/ios/iphoneos/app.ipa
           mandatory: true
           silent: false
-          release_notes: "Deployment successed"           
+          #release_notes: "Deployment successed"           
 
 
           
