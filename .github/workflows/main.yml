@@ -69,12 +69,12 @@ jobs:
         with:
           app: kumarvineet011/IOS
           token: ${{secrets.APP_CENTER_TOKEN}}
-          group: Tests
+          group: 'Tests'
           build-number: ${{ github.run_number }}
           path: build/ios/iphoneos/app.ipa
           mandatory: true
           silent: false
-          #release_notes: "Deployment successed"           
+          release_notes: "Deployment successed"           
 
 
           
