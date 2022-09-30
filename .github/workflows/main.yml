@@ -45,7 +45,7 @@ jobs:
         with:
          artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
          tag: v1.0.${{ github.run_number }}
-         token: ${{ secrets.token }}
+         token: ${{ secrets.Githun_Token }}
           
           
                 
@@ -56,7 +56,7 @@ jobs:
 #         uses: akiojin/appcenter-distribute-github-action@v1
 #         with:
 #            app: demoapp_ios/IOS
-#            token: ${{ secrets.APPCENTER_TOKEN }}
+#            token: ${{ secrets.APP_CENTER_TOKEN }}
 #            #artifacts: build/ios/iphoneos/app.ipa
 #            path:  build/ios/iphoneos/app.ipa 
 #            group: 'tester'
