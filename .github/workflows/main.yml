@@ -52,16 +52,16 @@ jobs:
         
         
         
-#       - name: Distribute ipa to App Center
-#         uses: akiojin/appcenter-distribute-github-action@v1
-#         with:
-#            app: demoapp_ios/IOS
-#            token: ${{ secrets.APPCENTER_TOKEN }}
-#            artifacts: build/ios/iphoneos/app.ipa
-#            path:  build/ios/iphoneos/app.ipa 
-#            group: 'tester'
-#            mandatory: true
-#            silent: false
+      - name: Distribute ipa to App Center
+        uses: akiojin/appcenter-distribute-github-action@v1
+        with:
+           app: demoapp_ios/IOS
+           token: ${{ secrets.APPCENTER_TOKEN }}
+           #artifacts: build/ios/iphoneos/app.ipa
+           path:  build/ios/iphoneos/app.ipa 
+           group: 'tester'
+           mandatory: true
+           silent: false
 
 
 #       - name: Distribute ipa to App Center
