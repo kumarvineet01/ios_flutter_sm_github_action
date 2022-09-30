@@ -67,8 +67,8 @@ jobs:
       - name: Distribute ipa to App Center
         uses: akiojin/appcenter-distribute-github-action@v1
         with:
-          app: kumarvineet011/IOS
-          token: ${{secrets.APP_CENTER_TOKEN}}
+          app: kumarvineet011/Flutter
+          token: ${{secrets.APP_TOKEN}}
           group: 'Tests'
           build-number: ${{ github.run_number }}
           path: build/ios/iphoneos/app.ipa
