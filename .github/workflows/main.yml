@@ -40,12 +40,12 @@ jobs:
       - name: Check_file & Path
         run: ls -l build/ios/iphoneos && pwd
           
-#       - name: Push to Releases
-#         uses: ncipollo/release-action@v1
-#         with:
-#          artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
-#          tag: v1.0.${{ github.run_number }}
-#          token: ${{ secrets.APPCENTER_TOKEN }}
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
+        with:
+         artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
+         tag: v1.0.${{ github.run_number }}
+         token: ${{ secrets.token }}
           
           
                 
@@ -64,17 +64,17 @@ jobs:
 #            silent: false
 
 
-      - name: Distribute ipa to App Center
-        uses: akiojin/appcenter-distribute-github-action@v1
-        with:
-          app: kumarvineet01/IOS
-          token: ${{secrets.APP_CENTER_TOKEN}}
-          group: 'Tests'
-          build-number: ${{ github.run_number }}
-          path: build/ios/iphoneos/app.ipa
-          mandatory: true
-          silent: false
-          release_notes: "Deployment successed"           
+#       - name: Distribute ipa to App Center
+#         uses: akiojin/appcenter-distribute-github-action@v1
+#         with:
+#           app: kumarvineet01/IOS
+#           token: ${{secrets.APP_CENTER_TOKEN}}
+#           group: 'Tests'
+#           build-number: ${{ github.run_number }}
+#           path: build/ios/iphoneos/app.ipa
+#           mandatory: true
+#           silent: false
+#           release_notes: "Deployment successed"           
 
   
           
